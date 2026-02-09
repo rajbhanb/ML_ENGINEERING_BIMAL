@@ -23,7 +23,7 @@ app = FastAPI()
 logging.info("Attempting to load models...")
 try:
     # Load the embedding model and the SVM classifier
-    model = SentenceTransformer("all-MiniLM-L6-v2")
+    model = SentenceTransformer("/opt/huggingface_models/all-MiniLM-L6-v2")#Using hugging face LLM in remote server instead of downloading LLM everytime
     clf = joblib.load('svm.joblib')
     logging.info("Models loaded successfully.")
 except FileNotFoundError:
